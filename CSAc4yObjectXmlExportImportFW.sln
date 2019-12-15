@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSAc4yObjectXmlExportImportFW", "CSAc4yObjectXmlExportImportFW\CSAc4yObjectXmlExportImportFW.csproj", "{FB1E292D-1E9F-41D5-837A-2521CB57AD68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB1E292D-1E9F-41D5-837A-2521CB57AD68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB1E292D-1E9F-41D5-837A-2521CB57AD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB1E292D-1E9F-41D5-837A-2521CB57AD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB1E292D-1E9F-41D5-837A-2521CB57AD68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99ECE111-77CD-4E4A-ABB7-CE43B6E43091}
+	EndGlobalSection
+EndGlobal
