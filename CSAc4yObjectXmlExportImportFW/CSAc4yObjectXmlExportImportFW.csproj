@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FB1E292D-1E9F-41D5-837A-2521CB57AD68}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>CSAc4yObjectXmlExportImportFW</RootNamespace>
     <AssemblyName>CSAc4yObjectXmlExportImportFW</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -36,20 +36,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSAc4yFW">
-      <HintPath>..\..\..\..\Library\LPCSharp\CSAc4yFW.dll</HintPath>
-    </Reference>
     <Reference Include="CSAc4yObjectDBCapFW">
-      <HintPath>..\..\..\..\Library\LPCSharp\CSAc4yObjectDBCapFW.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\library\LPCsharp\CSAc4yObjectDBCapFW.dll</HintPath>
     </Reference>
     <Reference Include="CSAc4yObjectObjectServiceFW">
-      <HintPath>..\..\..\..\Library\LPCSharp\CSAc4yObjectObjectServiceFW.dll</HintPath>
-    </Reference>
-    <Reference Include="CSAc4yObjectServiceWF">
-      <HintPath>..\..\..\..\Library\LPCSharp\CSAc4yObjectServiceWF.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\library\LPCsharp\CSAc4yObjectObjectServiceFW.dll</HintPath>
     </Reference>
     <Reference Include="CSAc4yServiceFW">
-      <HintPath>..\..\..\..\Library\LPCSharp\CSAc4yServiceFW.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\library\LPCsharp\CSAc4yServiceFW.dll</HintPath>
+    </Reference>
+    <Reference Include="CSAc4yUtilityFW">
+      <HintPath>..\..\..\..\..\..\..\..\library\LPCsharp\CSAc4yUtilityFW.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -74,12 +71,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaveToFileSysFW.cs" />
     <Compile Include="SerializationObject.cs" />
-    <Compile Include="StringToPascalCase.cs" />
     <Compile Include="Xmls.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Output\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

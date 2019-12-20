@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Ac4yObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>1013</Id>
+  <GUID>843E47A5-C299-4FB1-8AEC-B9FCDCBEA5A2</GUID>
+  <TemplateGUID>50502AD7-2BE8-4126-9DEF-2E85728CAD27</TemplateGUID>
+  <TemplateId>33</TemplateId>
+  <TemplateHumanId>modul</TemplateHumanId>
+  <TemplatePublicHumanId>modul</TemplatePublicHumanId>
+  <HumanId>próbaként</HumanId>
+  <PublicHumanId>próbaként</PublicHumanId>
+  <SimpledHumanId>PROBAKENT</SimpledHumanId>
+</Ac4yObject>

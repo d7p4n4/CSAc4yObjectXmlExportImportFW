@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Ac4yObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>1012</Id>
+  <GUID>8DFBDB5C-1F5C-4DB1-87BF-A9096AEEF640</GUID>
+  <TemplateGUID>50502AD7-2BE8-4126-9DEF-2E85728CAD27</TemplateGUID>
+  <TemplateId>33</TemplateId>
+  <TemplateHumanId>modul</TemplateHumanId>
+  <TemplatePublicHumanId>modul</TemplatePublicHumanId>
+  <HumanId>List_Fok_Jogcimek_leker</HumanId>
+  <PublicHumanId>List_Fok_Jogcimek_leker</PublicHumanId>
+  <SimpledHumanId>LISTFOKJOGCIMEKLEKER</SimpledHumanId>
+</Ac4yObject>

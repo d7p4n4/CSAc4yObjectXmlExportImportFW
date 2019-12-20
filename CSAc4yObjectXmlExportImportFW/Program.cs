@@ -20,7 +20,7 @@ namespace CSAc4yObjectXmlExportImportFW
         //public static SqlConnection sqlConn = new SqlConnection(ConfigurationManager.AppSettings["conneectionString"]);
         //public static SqlConnection sqlConnXML = new SqlConnection(ConfigurationManager.AppSettings["connectionStringXML"]);
         public static string TemplateName = ConfigurationManager.AppSettings["TemplateName"];
-        public static string outPath = ConfigurationManager.AppSettings["Path"];
+        public static string outPath = ConfigurationManager.AppSettings["outputPath"];
         public static string defaultPath = ConfigurationManager.AppSettings["DefaultPath"];
         public static string outPathProcess = defaultPath + ConfigurationManager.AppSettings["PathProcess"];
         public static string outPathSuccess = defaultPath + ConfigurationManager.AppSettings["PathSuccess"];
