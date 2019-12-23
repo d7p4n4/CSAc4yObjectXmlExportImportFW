@@ -15,6 +15,7 @@ namespace CSAc4yObjectXmlExportImport
     {
 
         private SqlConnection _sqlConnection { get; set; }
+
         public string sqlConnectionString;
         public string TemplateName;
         public string outPath;
