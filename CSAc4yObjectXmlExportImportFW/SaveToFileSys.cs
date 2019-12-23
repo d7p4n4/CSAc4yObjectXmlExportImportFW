@@ -1,5 +1,6 @@
 ﻿using CSAc4yObjectDBCap;
 using CSAc4yObjectObjectService.Object;
+using CSAc4yUtilityContainer;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,12 +8,13 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace CSAc4yObjectXmlExportImportFW
+namespace CSAc4yObjectXmlExportImport
 {
-    public class SaveToFileSysFW
+
+    public class SaveToFileSys
     {
-        
-        public SqlConnection sqlConnection;
+
+        private SqlConnection _sqlConnection { get; set; }
         public string sqlConnectionString;
         public string TemplateName;
         public string outPath;
@@ -20,9 +22,9 @@ namespace CSAc4yObjectXmlExportImportFW
         public string outPathSuccess;
         public string outPathError;
 
-        public SaveToFileSysFW() { }
+        public SaveToFileSys() { }
 
-        public SaveToFileSysFW(string newSqlConnectionString, string newTemp, string newOut, string newProc, string newSucc, string newErr)
+        public SaveToFileSys(string newSqlConnectionString, string newTemp, string newOut, string newProc, string newSucc, string newErr)
         {
             sqlConnectionString = newSqlConnectionString;
             TemplateName = newTemp;
@@ -31,27 +33,32 @@ namespace CSAc4yObjectXmlExportImportFW
             outPathSuccess = newSucc;
             outPathError = newErr;
 
-            sqlConnection = new SqlConnection(sqlConnectionString);
-            sqlConnection.Open();
+            _sqlConnection = new SqlConnection(sqlConnectionString);
+            _sqlConnection.Open();
         }
 
-        public SaveToFileSysFW(string newSqlConn, string newTemp, string newOut)
+        public SaveToFileSys(string newSqlConn, string newTemp, string newOut)
         {
             sqlConnectionString = newSqlConn;
             TemplateName = newTemp;
             outPath = newOut;
 
-            sqlConnection = new SqlConnection(sqlConnectionString);
-            sqlConnection.Open();
+            _sqlConnection = new SqlConnection(sqlConnectionString);
+            _sqlConnection.Open();
         }
         
-        public SaveToFileSysFW(string newSqlConn, string newOut)
+        public SaveToFileSys(string newSqlConn, string newOut)
         {
             sqlConnectionString = newSqlConn;
             outPath = newOut;
 
-            sqlConnection = new SqlConnection(sqlConnectionString);
-            sqlConnection.Open();
+            _sqlConnection = new SqlConnection(sqlConnectionString);
+            _sqlConnection.Open();
+        }
+
+        public SaveToFileSys(SqlConnection sqlConnection)
+        {
+            _sqlConnection = sqlConnection;
         }
 
         public void WriteOutAc4yObject()
@@ -59,7 +66,7 @@ namespace CSAc4yObjectXmlExportImportFW
             StringToPascalCase stringToPascalCase = new StringToPascalCase();
 
             ListInstanceByNameResponse listInstanceByNameResponse =
-                new Ac4yObjectObjectService(sqlConnection).ListInstanceByName(
+                new Ac4yObjectObjectService(_sqlConnection).ListInstanceByName(
                     new ListInstanceByNameRequest() { TemplateName = TemplateName }
                 );
 
@@ -68,7 +75,7 @@ namespace CSAc4yObjectXmlExportImportFW
                 string xml = serialize(element, typeof(Ac4yObject));
                 string templateSimpledId = stringToPascalCase.Convert(element.TemplatePublicHumanId).ToUpper();
 
-                writeOut(xml, element.SimpledHumanId + "@" + templateSimpledId + "@Ac4yObject", outPath);
+                WriteOut(xml, element.SimpledHumanId + "@" + templateSimpledId + "@Ac4yObject", outPath);
             }
 
         }
@@ -79,7 +86,7 @@ namespace CSAc4yObjectXmlExportImportFW
             List<string> names = new List<string>();
 
             ListInstanceByNameResponse listInstanceByNameResponse =
-                new Ac4yObjectObjectService(sqlConnection).ListInstanceByName(
+                new Ac4yObjectObjectService(_sqlConnection).ListInstanceByName(
                     new ListInstanceByNameRequest() { TemplateName = TemplateName }
                 );
 
@@ -90,36 +97,63 @@ namespace CSAc4yObjectXmlExportImportFW
                 string name = element.SimpledHumanId + "@" + templateSimpledId + "@Ac4yObject";
                 names.Add(name);
 
-                writeOut(xml, name, outPath);
+                WriteOut(xml, name, outPath);
             }
 
             return names;
         }
 
-        public void WriteOutAc4yObjectAll()
+        public void ExportAllInstances(string outputPath)
         {
-            StringToPascalCase stringToPascalCase = new StringToPascalCase();
+
+            if (String.IsNullOrEmpty(outputPath))
+                throw new Exception("OUTPUTPATH nem lehet üres!");
 
             ListInstanceResponse listInstanceResponse =
-                new Ac4yObjectObjectService(sqlConnection).ListInstance(
+                new Ac4yObjectObjectService(_sqlConnection).ListInstance(
+                    new ListInstanceRequest() { }
+                );
+
+            if (listInstanceResponse.Result.Fail())
+                throw new Exception(listInstanceResponse.Result.Message);
+
+            foreach (var element in listInstanceResponse.Ac4yObjectList)
+            {
+                string xml = serialize(element, typeof(Ac4yObject));
+                //string templateSimpledId = new StringToPascalCase().Convert(element.TemplatePublicHumanId).ToUpper();
+
+                WriteOut(xml, element.SimpledHumanId + "@" + element.TemplateSimpledHumanId + "@Ac4yObject", outputPath);
+            }
+
+        } // ExportAllInstances
+
+        public void ExportInstanceOfTemplate(string template)
+        {
+            
+            ListInstanceResponse listInstanceResponse =
+                new Ac4yObjectObjectService(_sqlConnection).ListInstance(
                     new ListInstanceRequest() { }
                 );
 
             foreach (var element in listInstanceResponse.Ac4yObjectList)
             {
                 string xml = serialize(element, typeof(Ac4yObject));
-                string templateSimpledId = stringToPascalCase.Convert(element.TemplatePublicHumanId).ToUpper();
+                string templateSimpledId = new StringToPascalCase().Convert(element.TemplatePublicHumanId).ToUpper();
 
-                writeOut(xml, element.SimpledHumanId + "@" + templateSimpledId + "@Ac4yObject", outPath);
+                WriteOut(xml, element.SimpledHumanId + "@" + templateSimpledId + "@Ac4yObject", outPath);
             }
 
-        }
+        } // ExportInstanceOfTemplate
 
-        public void writeOut(string text, string fileName, string outputPath)
+        public void WriteOut(string text, string fileName, string outputPath)
         {
+
+            if (!Directory.Exists(outputPath))
+                Directory.CreateDirectory(outputPath);
+
             File.WriteAllText(outputPath + fileName + ".xml", text);
 
-        }
+        } // WriteOut
 
         public string serialize(Object taroltEljaras, Type anyType)
         {
@@ -150,7 +184,7 @@ namespace CSAc4yObjectXmlExportImportFW
             if (!Directory.Exists(outPathError))
                 Directory.CreateDirectory(outPathError);
 
-            Ac4yObjectObjectService ac4YObjectObjectService = new Ac4yObjectObjectService(sqlConnection);
+            Ac4yObjectObjectService ac4YObjectObjectService = new Ac4yObjectObjectService(_sqlConnection);
 
             try
             {
@@ -216,5 +250,7 @@ namespace CSAc4yObjectXmlExportImportFW
 
 
         }
-    }
-}
+
+    } // SaveToFileSys
+
+} // CSAc4yObjectXmlExportImport
