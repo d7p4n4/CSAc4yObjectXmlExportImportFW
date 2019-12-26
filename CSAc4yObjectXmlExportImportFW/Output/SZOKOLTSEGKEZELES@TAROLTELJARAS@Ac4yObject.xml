@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Ac4yObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>526</Id>
+  <GUID>36BBE648-5C4B-4B33-9495-50183D1EB8BA</GUID>
+  <TemplateGUID>40657D3E-0553-41DB-ACE1-B0B4F9432B77</TemplateGUID>
+  <TemplateId>19</TemplateId>
+  <TemplateHumanId>tárolt eljárás</TemplateHumanId>
+  <TemplatePublicHumanId>tárolt eljárás</TemplatePublicHumanId>
+  <TemplateSimpledHumanId>TAROLTELJARAS</TemplateSimpledHumanId>
+  <TemplateNamespace />
+  <HumanId>Szo_Koltseg_Kezeles</HumanId>
+  <PublicHumanId>Szo_Koltseg_Kezeles</PublicHumanId>
+  <SimpledHumanId>SZOKOLTSEGKEZELES</SimpledHumanId>
+  <Namespace />
+</Ac4yObject>

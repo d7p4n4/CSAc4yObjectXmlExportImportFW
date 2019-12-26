@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Ac4yObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>573</Id>
+  <GUID>CC24CB63-91D7-4EB5-A589-0B014A3E5661</GUID>
+  <TemplateGUID>40657D3E-0553-41DB-ACE1-B0B4F9432B77</TemplateGUID>
+  <TemplateId>19</TemplateId>
+  <TemplateHumanId>tárolt eljárás</TemplateHumanId>
+  <TemplatePublicHumanId>tárolt eljárás</TemplatePublicHumanId>
+  <TemplateSimpledHumanId>tárolt eljárás</TemplateSimpledHumanId>
+  <TemplateNamespace />
+  <HumanId>Ko_BtchImp04x_Beatlepok</HumanId>
+  <PublicHumanId>Ko_BtchImp04x_Beatlepok</PublicHumanId>
+  <SimpledHumanId>KOBTCHIMP04XBEATLEPOK</SimpledHumanId>
+  <Namespace />
+</Ac4yObject>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Ac4yObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>709</Id>
+  <GUID>77139CA3-3535-4599-B61A-E7268E7EC46D</GUID>
+  <TemplateGUID>40657D3E-0553-41DB-ACE1-B0B4F9432B77</TemplateGUID>
+  <TemplateId>19</TemplateId>
+  <TemplateHumanId>tárolt eljárás</TemplateHumanId>
+  <TemplatePublicHumanId>tárolt eljárás</TemplatePublicHumanId>
+  <TemplateSimpledHumanId>tárolt eljárás</TemplateSimpledHumanId>
+  <TemplateNamespace />
+  <HumanId>ht_lek_bank_imp</HumanId>
+  <PublicHumanId>ht_lek_bank_imp</PublicHumanId>
+  <SimpledHumanId>HTLEKBANKIMP</SimpledHumanId>
+  <Namespace />
+</Ac4yObject>

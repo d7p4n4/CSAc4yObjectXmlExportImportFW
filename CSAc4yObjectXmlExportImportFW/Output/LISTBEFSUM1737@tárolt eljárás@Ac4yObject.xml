@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Ac4yObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>763</Id>
+  <GUID>CA2BCF8C-405D-43E4-808B-9A6E92232809</GUID>
+  <TemplateGUID>40657D3E-0553-41DB-ACE1-B0B4F9432B77</TemplateGUID>
+  <TemplateId>19</TemplateId>
+  <TemplateHumanId>tárolt eljárás</TemplateHumanId>
+  <TemplatePublicHumanId>tárolt eljárás</TemplatePublicHumanId>
+  <TemplateSimpledHumanId>tárolt eljárás</TemplateSimpledHumanId>
+  <TemplateNamespace />
+  <HumanId>List_Bef_Sum1737</HumanId>
+  <PublicHumanId>List_Bef_Sum1737</PublicHumanId>
+  <SimpledHumanId>LISTBEFSUM1737</SimpledHumanId>
+  <Namespace />
+</Ac4yObject>

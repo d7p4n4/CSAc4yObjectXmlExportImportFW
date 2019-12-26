@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Ac4yObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>563</Id>
+  <GUID>F72E7179-E10D-4E94-BCD3-4C9D487FB349</GUID>
+  <TemplateGUID>40657D3E-0553-41DB-ACE1-B0B4F9432B77</TemplateGUID>
+  <TemplateId>19</TemplateId>
+  <TemplateHumanId>tárolt eljárás</TemplateHumanId>
+  <TemplatePublicHumanId>tárolt eljárás</TemplatePublicHumanId>
+  <TemplateSimpledHumanId>tárolt eljárás</TemplateSimpledHumanId>
+  <TemplateNamespace />
+  <HumanId>Proc_Esz_Tagadat</HumanId>
+  <PublicHumanId>Proc_Esz_Tagadat</PublicHumanId>
+  <SimpledHumanId>PROCESZTAGADAT</SimpledHumanId>
+  <Namespace />
+</Ac4yObject>

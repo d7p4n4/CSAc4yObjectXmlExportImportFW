@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Ac4yObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>546</Id>
+  <GUID>26FA8805-24CF-4761-BAF9-A3B37A868C15</GUID>
+  <TemplateGUID>40657D3E-0553-41DB-ACE1-B0B4F9432B77</TemplateGUID>
+  <TemplateId>19</TemplateId>
+  <TemplateHumanId>tárolt eljárás</TemplateHumanId>
+  <TemplatePublicHumanId>tárolt eljárás</TemplatePublicHumanId>
+  <TemplateSimpledHumanId>tárolt eljárás</TemplateSimpledHumanId>
+  <TemplateNamespace />
+  <HumanId>sys_SQLNaploParancsToFile</HumanId>
+  <PublicHumanId>sys_SQLNaploParancsToFile</PublicHumanId>
+  <SimpledHumanId>SYSSQLNAPLOPARANCSTOFILE</SimpledHumanId>
+  <Namespace />
+</Ac4yObject>

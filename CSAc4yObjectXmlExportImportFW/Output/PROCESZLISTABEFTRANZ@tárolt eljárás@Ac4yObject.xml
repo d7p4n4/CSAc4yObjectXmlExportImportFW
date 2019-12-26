@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Ac4yObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>969</Id>
+  <GUID>84C6E09F-5B5C-4FCC-B7E8-D51B791C27A5</GUID>
+  <TemplateGUID>40657D3E-0553-41DB-ACE1-B0B4F9432B77</TemplateGUID>
+  <TemplateId>19</TemplateId>
+  <TemplateHumanId>tárolt eljárás</TemplateHumanId>
+  <TemplatePublicHumanId>tárolt eljárás</TemplatePublicHumanId>
+  <TemplateSimpledHumanId>tárolt eljárás</TemplateSimpledHumanId>
+  <TemplateNamespace />
+  <HumanId>Proc_Esz_Lista_Beftranz</HumanId>
+  <PublicHumanId>Proc_Esz_Lista_Beftranz</PublicHumanId>
+  <SimpledHumanId>PROCESZLISTABEFTRANZ</SimpledHumanId>
+  <Namespace />
+</Ac4yObject>

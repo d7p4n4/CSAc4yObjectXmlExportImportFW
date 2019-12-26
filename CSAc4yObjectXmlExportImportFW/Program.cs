@@ -72,21 +72,27 @@ namespace CSAc4yObjectXmlExportImportFW
             {
 
                 Program program = new Program(ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None));
-
+/*
                 new SaveToFileSys(program.SqlConnection).ExportAllInstances(
                         program.Config.AppSettings.Settings[APPSETTINGS_OUTPUTPATH].Value
                     );
+*/
+                new SaveToFileSys(program.SqlConnection).ExportInstanceOfTemplate(
+                        program.Config.AppSettings.Settings[APPSETTINGS_TEMPLATE].Value
+                        ,program.Config.AppSettings.Settings[APPSETTINGS_OUTPUTPATH].Value
+                    );
+
                 /*
                 new SaveToFileSys(program.SqlConnection).ExportInstanceOfTemplate(
                         program.Config.AppSettings.Settings[APPSETTINGS_TEMPLATE].Value
                     );
                 */
                 //GetXmls getXmls = new GetXmls();
-///                SaveToFileSys saveToFileSys = new SaveToFileSys(connectionString, TemplateName, outPath, outPathProcess, outPathSuccess, outPathError);
+                ///                SaveToFileSys saveToFileSys = new SaveToFileSys(connectionString, TemplateName, outPath, outPathProcess, outPathSuccess, outPathError);
 
-///                saveToFileSys.Load();
-///                saveToFileSys.WriteOutAc4yObject();
-                
+                ///                saveToFileSys.Load();
+                ///                saveToFileSys.WriteOutAc4yObject();
+
                 //saveToFileSysFW.WriteOutAc4yObjectHome();
                 //sqlConnXML.Open();
                 /*
