@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Ac4yClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Metodus</Name>
+  <Ancestor>RAMetaObjektum</Ancestor>
+  <PropertyList>
+    <Ac4yProperty>
+      <Name>Uzemmod</Name>
+      <Type>Int32</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+    </Ac4yProperty>
+    <Ac4yProperty>
+      <Name>Skalar</Name>
+      <Type>Boolean</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+    </Ac4yProperty>
+    <Ac4yProperty>
+      <Name>ArgumentumLista</Name>
+      <Type>List&lt;TaroltEljarasArgumentum&gt;</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+      <Class>TaroltEljarasArgumentum</Class>
+    </Ac4yProperty>
+  </PropertyList>
+  <GUID />
+  <Namespace>CSARMetaPlan.Class</Namespace>
+  <Persistent>false</Persistent>
+</Ac4yClass>

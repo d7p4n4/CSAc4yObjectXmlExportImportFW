@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Ac4yClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>TablaOszlop</Name>
+  <Ancestor>RAMetaObjektum</Ancestor>
+  <PropertyList>
+    <Ac4yProperty>
+      <Name>Adattipus</Name>
+      <Type>String</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+    </Ac4yProperty>
+  </PropertyList>
+  <GUID />
+  <Namespace>CSARMetaPlan.Class</Namespace>
+  <Persistent>false</Persistent>
+</Ac4yClass>

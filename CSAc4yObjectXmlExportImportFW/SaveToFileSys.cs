@@ -1,5 +1,7 @@
-﻿using CSAc4yObjectDBCap;
-using CSAc4yObjectObjectService.Object;
+﻿using Ac4yDBCap;
+using Ac4yObjectService.Object;
+using Ac4yObjectService.Txt;
+using CSAc4yClass.Class;
 using CSAc4yUtilityContainer;
 using System;
 using System.Collections.Generic;
@@ -186,8 +188,13 @@ namespace CSAc4yObjectXmlExportImport
             return xml;
         }
         */
-        /*
-        public void Load()
+        
+        public void Load(
+                        string outPathProcess
+                        ,string outPathSuccess
+                        ,string outPathError
+                        ,string outputPath
+                )
         {
             if (!Directory.Exists(outPathProcess))
                 Directory.CreateDirectory(outPathProcess);
@@ -203,7 +210,7 @@ namespace CSAc4yObjectXmlExportImport
             try
             {
                 string[] files =
-                    Directory.GetFiles(outPath, "*.xml", SearchOption.TopDirectoryOnly);
+                    Directory.GetFiles(outputPath, "*.xml", SearchOption.TopDirectoryOnly);
 
                 Console.WriteLine(files.Length);
 
@@ -211,12 +218,13 @@ namespace CSAc4yObjectXmlExportImport
                 {
                     string _filename = Path.GetFileNameWithoutExtension(_file);
                     Console.WriteLine(_filename);
-                    System.IO.File.Move(outPath + _filename + ".xml", outPathProcess + _filename + ".xml");
+                    System.IO.File.Move(outputPath + _filename + ".xml", outPathProcess + _filename + ".xml");
 
 
-                    string xml = readIn(_filename, outPathProcess);
+                    string xml = ReadIn(_filename, outPathProcess);
 
-                    Ac4yObject tabla = (Ac4yObject)Deserialize(xml, typeof(Ac4yObject));
+                    //Ac4yObject tabla = (Ac4yObject)Deserialize(xml, typeof(Ac4yObject));
+                    Ac4yObject tabla = (Ac4yObject)new Ac4yUtility().Xml2Object(xml, typeof(Ac4yObject));
 
                     SetByGuidAndNamesResponse response = ac4YObjectObjectService.SetByGuidAndNames(
                         new SetByGuidAndNamesRequest() { TemplateName = tabla.TemplateHumanId, Name = tabla.HumanId, Guid = tabla.GUID }
@@ -238,8 +246,90 @@ namespace CSAc4yObjectXmlExportImport
             {
                 Console.WriteLine(_exception.Message);
             }
-        }
-        */
+
+        } // Load
+
+        public void LoadAc4yClass(
+                        string inputPath
+                        , string processingPath
+                        , string successPath
+                        , string errorPath
+                )
+        {
+            if (!Directory.Exists(inputPath+processingPath))
+                Directory.CreateDirectory(inputPath+processingPath);
+
+            if (!Directory.Exists(inputPath+ successPath))
+                Directory.CreateDirectory(inputPath+ successPath);
+
+            if (!Directory.Exists(inputPath+ errorPath))
+                Directory.CreateDirectory(inputPath+ errorPath);
+
+            Ac4yObjectObjectService ac4YObjectObjectService = new Ac4yObjectObjectService(_sqlConnection);
+
+            try
+            {
+                string[] files =
+                    Directory.GetFiles(inputPath, "*.xml", SearchOption.TopDirectoryOnly);
+
+                Console.WriteLine(files.Length);
+
+                foreach (var file in files)
+                {
+                    string filename = Path.GetFileNameWithoutExtension(file);
+                    //Console.WriteLine(filename);
+                    System.IO.File.Move(inputPath + filename + ".xml", inputPath+ processingPath + filename + ".xml");
+
+
+                    string xml = ReadIn(filename, inputPath + processingPath);
+
+                    //Ac4yObject tabla = (Ac4yObject)Deserialize(xml, typeof(Ac4yObject));
+                    //Ac4yObject tabla = (Ac4yObject)new Ac4yUtility().Xml2Object(xml, typeof(Ac4yObject));
+                    Ac4yClass ac4yClass = (Ac4yClass)new Ac4yUtility().Xml2Object(xml, typeof(Ac4yClass));
+
+                    SetByNamesResponse setByNamesResponse = new Ac4yObjectObjectService(_sqlConnection).SetByNames(
+                            new SetByNamesRequest() {
+                                TemplateName = "Ac4yClass"
+                                , Name = ac4yClass.Name
+                            }
+                        );
+
+                    if (setByNamesResponse.Result.Success())
+                    {
+                        System.IO.File.Move(inputPath + processingPath + filename + ".xml", inputPath + successPath + filename + ".xml");
+
+                    }
+                    else
+                    {
+                        System.IO.File.Move(inputPath + processingPath + filename + ".xml", inputPath + errorPath + filename + ".xml");
+
+                    }
+
+                    if (!setByNamesResponse.Result.Success())
+                        throw new Exception("Az Ac4yClass objektum kiírása sikertelen!");
+
+                    SetByGuidResponse setByGuidResponse  =
+                        new Ac4yTxtObjectService(_sqlConnection).SetByGuid(
+                                new SetByGuidRequest()
+                                {
+                                    Guid = setByNamesResponse.Ac4yObject.GUID
+                                    ,
+                                    Txt = xml
+                                }
+                            );
+
+                    if (!setByGuidResponse.Result.Success())
+                        throw new Exception("Az Ac4yClass xml kiírása sikertelen!");
+
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+
+        } // LoadAc4yClass
+
         /*
         public Object Deserialize(string xml, Type anyType)
         {

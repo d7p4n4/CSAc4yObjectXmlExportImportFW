@@ -23,6 +23,7 @@ namespace CSAc4yObjectXmlExportImportFW
         private const string APPSETTINGS_CONNECTIONPARAMETER = "CONNECTIONPARAMETER";
         private const string APPSETTINGS_TEMPLATE = "TEMPLATE";
         private const string APPSETTINGS_OUTPUTPATH = "OUTPUTPATH";
+        private const string APPSETTINGS_INPUTPATH = "INPUTPATH";
 
         public static string connectionString = ConfigurationManager.AppSettings["connectionString"];
         //public static SqlConnection sqlConn = new SqlConnection(ConfigurationManager.AppSettings["conneectionString"]);
@@ -77,11 +78,12 @@ namespace CSAc4yObjectXmlExportImportFW
                         program.Config.AppSettings.Settings[APPSETTINGS_OUTPUTPATH].Value
                     );
 */
+                /*
                 new SaveToFileSys(program.SqlConnection).ExportInstanceOfTemplate(
                         program.Config.AppSettings.Settings[APPSETTINGS_TEMPLATE].Value
                         ,program.Config.AppSettings.Settings[APPSETTINGS_OUTPUTPATH].Value
                     );
-
+                */
                 /*
                 new SaveToFileSys(program.SqlConnection).ExportInstanceOfTemplate(
                         program.Config.AppSettings.Settings[APPSETTINGS_TEMPLATE].Value
@@ -89,8 +91,12 @@ namespace CSAc4yObjectXmlExportImportFW
                 */
                 //GetXmls getXmls = new GetXmls();
                 ///                SaveToFileSys saveToFileSys = new SaveToFileSys(connectionString, TemplateName, outPath, outPathProcess, outPathSuccess, outPathError);
-
-                ///                saveToFileSys.Load();
+                new SaveToFileSys(program.SqlConnection).LoadAc4yClass(
+                         program.Config.AppSettings.Settings[APPSETTINGS_INPUTPATH].Value
+                        ,program.Config.AppSettings.Settings["ProcessingPath"].Value
+                        ,program.Config.AppSettings.Settings["SuccessPath"].Value
+                        ,program.Config.AppSettings.Settings["ErrorPath"].Value
+                    );
                 ///                saveToFileSys.WriteOutAc4yObject();
 
                 //saveToFileSysFW.WriteOutAc4yObjectHome();

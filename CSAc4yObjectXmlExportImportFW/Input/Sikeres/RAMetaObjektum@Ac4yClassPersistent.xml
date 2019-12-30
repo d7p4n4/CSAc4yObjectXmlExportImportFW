@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Ac4yClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>RAMetaObjektum</Name>
+  <Ancestor>Object</Ancestor>
+  <PropertyList>
+    <Ac4yProperty>
+      <Name>Nev</Name>
+      <Type>String</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+    </Ac4yProperty>
+    <Ac4yProperty>
+      <Name>Megnevezes</Name>
+      <Type>String</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+    </Ac4yProperty>
+    <Ac4yProperty>
+      <Name>Kod</Name>
+      <Type>String</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+    </Ac4yProperty>
+    <Ac4yProperty>
+      <Name>Leiras</Name>
+      <Type>String</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+    </Ac4yProperty>
+    <Ac4yProperty>
+      <Name>Id</Name>
+      <Type>Int32</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+    </Ac4yProperty>
+    <Ac4yProperty>
+      <Name>Serialization</Name>
+      <Type>String</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+    </Ac4yProperty>
+  </PropertyList>
+  <GUID />
+  <Namespace>CSARMetaPlan.Class</Namespace>
+  <Persistent>false</Persistent>
+</Ac4yClass>

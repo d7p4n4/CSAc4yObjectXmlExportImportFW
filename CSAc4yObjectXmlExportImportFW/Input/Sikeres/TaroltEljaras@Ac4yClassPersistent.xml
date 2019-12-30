@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Ac4yClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>TaroltEljaras</Name>
+  <Ancestor>RAMetaObjektum</Ancestor>
+  <PropertyList>
+    <Ac4yProperty>
+      <Name>MuveletLista</Name>
+      <Type>List&lt;Muvelet&gt;</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+      <Class>Muvelet</Class>
+    </Ac4yProperty>
+    <Ac4yProperty>
+      <Name>MetodusLista</Name>
+      <Type>List&lt;Metodus&gt;</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+      <Class>Metodus</Class>
+    </Ac4yProperty>
+    <Ac4yProperty>
+      <Name>ArgumentumLista</Name>
+      <Type>List&lt;TaroltEljarasArgumentum&gt;</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+      <Class>TaroltEljarasArgumentum</Class>
+    </Ac4yProperty>
+  </PropertyList>
+  <GUID />
+  <Namespace>CSARMetaPlan.Class</Namespace>
+  <Persistent>false</Persistent>
+</Ac4yClass>

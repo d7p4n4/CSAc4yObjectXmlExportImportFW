@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FB1E292D-1E9F-41D5-837A-2521CB57AD68}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>CSAc4yObjectXmlExportImportFW</RootNamespace>
     <AssemblyName>CSAc4yObjectXmlExportImportFW</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -36,6 +36,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSAc4yClassFW">
+      <HintPath>..\..\..\..\..\..\..\..\library\LPCsharp\CSAc4yClassFW.dll</HintPath>
+    </Reference>
     <Reference Include="CSAc4yObjectDBCapFW">
       <HintPath>..\..\..\..\..\..\..\..\library\LPCsharp\CSAc4yObjectDBCapFW.dll</HintPath>
     </Reference>
@@ -78,6 +81,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Input\" />
     <Folder Include="Output\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

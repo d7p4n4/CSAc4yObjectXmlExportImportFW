@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Ac4yClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Tabla</Name>
+  <Ancestor>RAMetaObjektum</Ancestor>
+  <PropertyList>
+    <Ac4yProperty>
+      <Name>TablaOszlopLista</Name>
+      <Type>List&lt;TablaOszlop&gt;</Type>
+      <Embedded>false</Embedded>
+      <WidgetType>NODEF</WidgetType>
+      <Multiple>false</Multiple>
+      <Class>TablaOszlop</Class>
+    </Ac4yProperty>
+  </PropertyList>
+  <GUID />
+  <Namespace>CSARMetaPlan.Class</Namespace>
+  <Persistent>false</Persistent>
+</Ac4yClass>
